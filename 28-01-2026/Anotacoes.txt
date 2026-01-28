@@ -29,3 +29,4 @@ SQL é um recurso, um sistema, que permite a manipulação de bancos de dados re
 O Excel é uma visão bem simplificada de um SGBD (Sistema Gerenciados de Banco de Dados)
 
 O SQL é o sistema para manipular os dados e o MySQL, SQL Server, Oracle Database são plataformas, ambientes, para usar o SQL. É  parecido como o VSCODE que é um ambiente de programação que permite o uso de linguagens como C++, Python, Java, etc.
+
