@@ -1,0 +1,31 @@
+#Aula 28/01/2026
+
+------------------
+Objetivos:
+
+O que é um dado
+O que é um banco de dados
+O que é o SQL
+Sistema de Gerenciamento de Bancos de Dados
+
+-----------------------
+Dados
+
+Um dado é um informação que permite chegar ao conhecimento de algo, como o tamanho de um prédio, o preço de uma compra e o peso de uma pessoa. Sendo que qualquer objeto possui informações associadas.
+
+----------------------------
+Banco de Dados
+
+Um banco de dados é de forma simples uma grande tabela que organiza inúmeros dados de diversas fontes e tipos diferentes. Um verdadeiro Excel.
+Com os dados bem estruturados é possível identificar padrões e tendências, além de catalogar de forma mais fácil os usuários
+
+Bancos de dados são conjuntos de tabelas com alguma relação entre si. Tais ados organizados permitem a compreensão de um contexto
+
+-------------------------
+SQL
+
+SQL é um recurso, um sistema, que permite a manipulação de bancos de dados relacionais, sendo que é através dele que somos capazes de consultar e manipular os dados dos nosso bancos de dados
+
+O Excel é uma visão bem simplificada de um SGBD (Sistema Gerenciados de Banco de Dados)
+
+O SQL é o sistema para manipular os dados e o MySQL, SQL Server, Oracle Database são plataformas, ambientes, para usar o SQL. É  parecido como o VSCODE que é um ambiente de programação que permite o uso de linguagens como C++, Python, Java, etc.
