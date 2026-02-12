@@ -1,0 +1,41 @@
+#Banco de Dados 
+
+'''
+Com base no primeiro exercício crie um diagrama relacional
+
+Criar um banco de dados para o controle de matrícula de alunos
+em cursos. O aluno pode se inscrever em múltiplos cursos e cada
+curso pode ter múltiplos alunos. Será necessário gerenciar essas
+informações, incluindo os dados dos alunos, cursos e matrículas.
+Definir quais serão as tabelas e quais serão os campos
+'''
+
+#Tabela dos Alunos 
+
+Nome do Aluno 
+Número de Matricula (PK)
+Idade
+Histórico Escolar
+CPF
+Data de Nascimento
+Gênero
+Nomes do Curso
+RG
+Telefone
+Email
+
+#Tabela de Cursos
+
+Nome do Curso
+Número do Curso (PK)
+Instrutores do Curso
+Descrição
+Data de Inicio do Cursos
+Data de Fim do Curso
+Grade Curricular dos Cursos
+Horas de Duração do Curso
+Documentos para realizar o curso
+Alunos matriculados
+
+
+
