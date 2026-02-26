@@ -62,7 +62,7 @@ insert into livros(titulo,autor,ano_publicado,genero)
 values 
 ("O Xangô de Baker Street","Jô Soares","1995","Comédia,Mistério"),
 ("As Esgandas","Jô Soares","2011","Ficção Policial"),
-("O Homem que Matou Getúlio Vargas","Jô Soaes","1998","Ficção Histórica"),
+("O Homem que Matou Getúlio Vargas","Jô Soares","1998","Ficção Histórica"),
 ("Assassinatos na Academia Brasileira de Letras","Jô Soares","2005","Ficção,Mistério"),
 ("O Assassinano No Expresso Oriente", "Agatha Christie","1934","Ficção Policial"),
 ("O Assassinato de Roger Ackroyd", "Agatha Christie","1926","Ficção Policial"),
@@ -115,6 +115,27 @@ values
 ("Joao Paulo","Gerente Geral","jp@gmail.com","98000-0020"),
 ("Tomas Henrique","Balconista","t.henrique@gmail.com","98000-0220"),
 ("Beatriz Lacerda","Repositora","beatriz.lacerda@gmail.com","98000-0060");
+
+
+insert into Emprestimos(id_usuario,id_livro,data_emprestimo,data_devolucao,status_emprestimo)
+values
+("1","1","2026-02-26","2026-03-26","Não Devolvido"),
+("1","2","2026-02-26","2026-03-26","Não Devolvido"),
+("1","3","2026-02-26","2026-03-26","Não Devolvido"),
+("15","28","2026-02-26","2026-03-26","Não Devolvido"),
+("15","29","2026-01-15","2026-02-15","Devolvido"),
+("7","8","2025-02-26","2025-03-26","Não Devolvido"),
+("13","20","2026-01-22","2026-02-22","Devolvido"),
+("12","8","2026-01-25","2026-02-25","Devolvido"),
+("12","9","2026-01-20","2026-02-20","Devolvido"),
+("12","10","2026-01-27","2026-02-27","Não Devolvido");
+
+insert into Multas(id_usuario,valor_multa,data_vencimento,status_pagamento)
+values
+("8","10.00","2026-01-15","Pago"),
+("8","15.00","2026-01-20","Não Pago"),
+("3","15.00","2026-01-15","Pago");
+
 
 
 
