@@ -1,0 +1,143 @@
+drop database biblioteca;
+
+create database biblioteca;
+
+use biblioteca;
+
+
+create table livros(
+id INT auto_increment primary key,
+titulo varchar(255),
+autor varchar(255),
+ano_publicado YEAR,
+isbn varchar(20),
+genero varchar(50),
+quantidade_estoque int
+);
+
+
+create table Usuarios (
+id INT auto_increment primary key,
+nome varchar(255),
+email varchar(100),
+telefone varchar(20),
+endereco varchar(255),
+data_nascimento date,
+data_registro timestamp default current_timestamp
+);
+
+
+create table Funcionarios(
+id int auto_increment primary key,
+nome varchar(255),
+cargo varchar(100),
+email varchar(100),
+telefone varchar(20),
+data_admissao date
+);
+
+create table Emprestimos(
+id int auto_increment primary key,
+id_usuario int,
+id_livro int,
+data_emprestimo date,
+data_devolucao date,
+status_emprestimo varchar(20),
+foreign key (id_usuario) references Usuarios(id),
+foreign key (id_livro) references livros(id)
+);
+
+
+create table Multas(
+id int auto_increment primary key,
+id_usuario int,
+valor_multa decimal(10,2),
+data_vencimento date,
+status_pagamento varchar(20),
+foreign key (id_usuario) references Usuarios(id)
+); 
+
+
+insert into livros(titulo,autor,ano_publicado,genero)
+values 
+("O Xangô de Baker Street","Jô Soares","1995","Comédia,Mistério"),
+("As Esgandas","Jô Soares","2011","Ficção Policial"),
+("O Homem que Matou Getúlio Vargas","Jô Soares","1998","Ficção Histórica"),
+("Assassinatos na Academia Brasileira de Letras","Jô Soares","2005","Ficção,Mistério"),
+("O Assassinano No Expresso Oriente", "Agatha Christie","1934","Ficção Policial"),
+("O Assassinato de Roger Ackroyd", "Agatha Christie","1926","Ficção Policial"),
+("O Misterioso Caso de Styles", "Agatha Christie","1920","Ficção Policial"),
+("Os crimes do ABC", "Agatha Christie","1936","Ficção Policial"),
+("Cai o Pano - O Último Caso de Poirot", "Agatha Christie","1975","Ficção Policial"),
+("O Caso dos Dez Negrinhos", "Agatha Christie","1939","Ficção Policial"),
+("Vidas Secas", "Graciliano Ramos","1938","Romance"),
+("Angustia", "Graciliano Ramos","1936","Romance"),
+("Insônia", "Graciliano Ramos","1947","Ficção"),
+("It - A Coisa", "Stephen King","1986","Romance, Terror"),
+("O Iluminado", "Stephen King","1977","Romance, Terror"),
+("A Espera de Um Milagre", "Stephen King","1996","Terror"),
+("Carrie", "Stephen King","1974","Romance, Terror"),
+("O Espião que Morreu de Tédio", "Geroge Mikes","1973","Comédia,Sátira"),
+("O Pequeno Príncipe", "Saint-Exupéry","1943","Literatura Infatil"),
+("O Vendedor de Sonhos - O Chamado", "Augusto Cury","2008","Romance Psicológico"),
+("O Vendedor de Sonhos - A Revolução dos Anônimos", "Augusto Cury","2009","Romance Psicológico"),
+("O Semeador de Ideias", "Augusto Cury","2010","Romance Psicológico"),
+("Coma","Robin Cook","1977","Suspense,Romance,Terror"),
+("Virus","Robin Cook","1987","Suspense,Romance,Terror"),
+("Terminal","Robin Cook","1993","Suspense,Romance,Terror"),
+("A Volta ao Mundo em 80 Dias","Julio Verne","1972","Ficção Científica"),
+("Vinte Mil Léguas Submarinas","Julio Verne","1970","Ficção Científica"),
+("Da Terra à Lua","Julio Verne","1965","Ficção Científica"),
+("O Alienista","Machado de Assis","1982","Ficção"),
+("Memórias Póstumas de Brás Cubas","Machado de Assis","1981","Ficção");
+
+
+insert into Usuarios(nome,email,telefone,endereco)
+values 
+("João Paulo","joao@gmail.com","98070-0001","Avenida Paulista, 50"),
+("Clarice Lispector","clarice.lis@gmail.com","98070-0002","Oscar Freire,788"),
+("Machado de Assis","machado.assis@gmail.com","98070-0003","25 de Março,69"),
+("Conan Doyle","sherlock@gmail.com","98070-0004","Rua Augusta,95"),
+("Carlos Andre","carlos.andrade@gmail.com","98070-0005","Avenida São João,99"),
+("Agatha Christie","hercule@gmail.com","98070-0006","Rua São Caetano,55"),
+("Carlos Heito Cony","pai.amado@gmail.com","98070-0007","Ladeira Porto Geral,25"),
+("Oswald de Andrade","pedra.no.caminho@gmail.com","98070-0008","Avenida 9 de Julho,500"),
+("Jô Soares","OGordo@gmail.com","98070-0009","Rua Seridó,77"),
+("Esteve Rei","o.iluminado@gmail.com","98070-0010","Rua Barão de Capanema,91"),
+("Jorge Amado","pedro.bala@gmail.com","98070-0011","Rua Escobar Ortiz,43"),
+("Maria Clara","maria.clara@gmail.com","98070-0012","Rua Avanhandava,66"),
+("Júlio Verne","capitão.nemo@gmail.com","98070-0013","Avenida Atlântica,98"),
+("Pedro Bandeira","os.Karas@gmail.com","98070-0014","Rua Dias Ferreira,275"),
+("João Carlos Marinho","bolachao@gmail.com","98070-0015","Avenida Marechal Tito,27");
+
+insert into Funcionarios(nome,cargo,email,telefone)
+values 
+("Joao Paulo","Gerente Geral","jp@gmail.com","98000-0020"),
+("Tomas Henrique","Balconista","t.henrique@gmail.com","98000-0220"),
+("Beatriz Lacerda","Repositora","beatriz.lacerda@gmail.com","98000-0060");
+
+
+insert into Emprestimos(id_usuario,id_livro,data_emprestimo,data_devolucao,status_emprestimo)
+values
+("1","1","2026-02-26","2026-03-26","Não Devolvido"),
+("1","2","2026-02-26","2026-03-26","Não Devolvido"),
+("1","3","2026-02-26","2026-03-26","Não Devolvido"),
+("15","28","2026-02-26","2026-03-26","Não Devolvido"),
+("15","29","2026-01-15","2026-02-15","Devolvido"),
+("7","8","2025-02-26","2025-03-26","Não Devolvido"),
+("13","20","2026-01-22","2026-02-22","Devolvido"),
+("12","8","2026-01-25","2026-02-25","Devolvido"),
+("12","9","2026-01-20","2026-02-20","Devolvido"),
+("12","10","2026-01-27","2026-02-27","Não Devolvido");
+
+insert into Multas(id_usuario,valor_multa,data_vencimento,status_pagamento)
+values
+("8","10.00","2026-01-15","Pago"),
+("8","15.00","2026-01-20","Não Pago"),
+("3","15.00","2026-01-15","Pago");
+
+
+
+
+
+
