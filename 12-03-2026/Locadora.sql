@@ -52,7 +52,8 @@ values
 ("Agatha Christie","hercule@gmail.com","98070-0006","Rua São Caetano,55","500.500.503-70"),
 ("Carlos Heito Cony","pai.amado@gmail.com","98070-0007","Ladeira Porto Geral,25","500.530.500-70"),
 ("Oswald de Andrade","pedra.no.caminho@gmail.com","98070-0008","Avenida 9 de Julho,500","580.500.500-70"),
-("Jô Soares","OGordo@gmail.com","98070-0009","Rua Seridó,77","500.500.530-70");
+("Jô Soares","OGordo@gmail.com","98070-0009","Rua Seridó,77","500.500.530-70"),
+("Jô Tavares","OoutroGordo@gmail.com","98071-0009","Rua Seridó,78","500.531.530-70");
 
 
 insert into Filmes(titulo,estudio,genero,quantidade_estoque)
@@ -96,6 +97,20 @@ values
 (1,1,"2026-05-04","2026-06-04","Devolvido");
 
 
+select *
+from clientes
+;
+
+select *
+from Funcionarios
+;
+
+select *
+from Filmes;
+
+
+select *
+from Alugueis;
 
 
 
