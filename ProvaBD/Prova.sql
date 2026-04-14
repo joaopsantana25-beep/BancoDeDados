@@ -1,4 +1,4 @@
-drop database MAD_Tecnologias;
+drop database IF EXISTS MAD_Tecnologias  ;
 
 create database MAD_Tecnologias;
 
@@ -9,7 +9,8 @@ id iNT auto_increment primary key,
 nome varchar(255),
 endereco varchar(255),
 CPF varchar(20),
-email varchar(255)
+email varchar(255),
+cidade varchar(255)
 );
 
 create table Fornecedores(
@@ -32,11 +33,14 @@ create table Produtos(
 id int auto_increment primary key,
 nome varchar(255),
 descricao varchar(255),
+marca varchar(255),
 quantidade_estoque int,
 id_Categoria_Produto int,
 preco decimal(10,2),
+id_Fornecedor int,
 
-foreign key (id_Categoria_Produto) references Categorias_Produtos(id)
+foreign key (id_Categoria_Produto) references Categorias_Produtos(id),
+foreign key (id_Fornecedor) references Fornecedores(id)
 );
 
 
@@ -108,13 +112,13 @@ foreign key (id_Categoria_Item) references Categorias_Produtos(id)
 
 
 
-insert into Clientes(nome,email,endereco,CPF)
+insert into Clientes(nome,email,endereco,CPF,cidade)
 values 
-("João Paulo","joao@gmail.com","Avenida Paulista, 50","505-505-505-30"),
-("Clarice Lispector","clarice.lis@gmail.com","Oscar Freire,788","505-505-505-40"),
-("Machado de Assis","machado.assis@gmail.com","25 de Março,69","505-505-505-60"),
-("Conan Doyle","sherlock@gmail.com","Rua Augusta,95","505-505-505-70"),
-("Carlos Andre","carlos.andrade@gmail.com","Avenida São João,99","505-505-505-80");
+("João Paulo","joao@gmail.com","Avenida Paulista, 50","505-505-505-30","São Paulo-SP"),
+("Clarice Lispector","clarice.lis@gmail.com","Oscar Freire,788","505-505-505-40","Rio de Janeiro-RJ"),
+("Machado de Assis","machado.assis@gmail.com","25 de Março,69","505-505-505-60","São Paulo-SP"),
+("Conan Doyle","sherlock@gmail.com","Rua Augusta,95","505-505-505-70","Salvador-BA"),
+("Carlos Andre","carlos.andrade@gmail.com","Avenida São João,99","505-505-505-80","Goiânia-GO");
 
 insert into Fornecedores(nome,email,endereco,descricao)
 values
@@ -132,13 +136,13 @@ values
 ("Placa Mães","Placa mães da Max","Rua 3","2025-12-20 15:30:00"),
 ("Gabintes","Gabinetes para pcs","Rua 4","2025-12-20 17:30:00");
 
-insert into Produtos(nome,descricao,quantidade_estoque,id_Categoria_Produto,preco)
+insert into Produtos(nome,descricao,quantidade_estoque,id_Categoria_Produto,preco,id_Fornecedor,marca)
 values
-("Notebook Positivo","Notebook maravilhoso e super atualizado da marca Positivo","15","2","700.00"),
-("Notebook DELL","Notebook DELL vesão para trabalho doméstico","30","2","8000.00"),
-("Cadeira Gamer","Cadeira Gamer ergonômica","8","3","1500.00"),
-("Gabinete de Tal","Gabinete super confiável da marca de Tal","40","5","600.00"),
-("Mouse Wireless","Mouse wireless da marca Xingling","40","1","200.00");
+("Notebook Positivo","Notebook maravilhoso e super atualizado da marca Positivo","15","2","700.00","1","Positivo"),
+("Notebook DELL","Notebook DELL vesão para trabalho doméstico","30","2","8000.00","1","DELL"),
+("Cadeira Gamer","Cadeira Gamer ergonômica","8","3","1500.00","5","Cadeirudos"),
+("Gabinete de Tal","Gabinete super confiável da marca de Tal","40","5","600.00","4","Tal"),
+("Mouse Wireless","Mouse wireless da marca Xingling","60","1","200.00","3","Xingling");
 
 insert into Funcionarios(nome,cargo,descricao,email,salario)
 values
@@ -178,11 +182,11 @@ values
 ("1","1","1","2","Notebooks da positivo","15","Notebook Positivo"),
 ("5","1","4","1","Mouses Wireless Xingling","40","Mouses Wireless"),
 ("3","2","2","3","Cadeira Gamers Ergonomicas","8","Cadeira Gamer"),
-("4","3","5","5","Gabinetes da Marca Tal","40","Gabinetes de Tal"),
+("4","3","5","5","Gabinetes da Marca Tal","60","Gabinetes de Tal"),
 ("2","5","5","2","Notebooks da DELL","30","Notebooks DELL");
 
 
-
+/*
 select *
 from produtos;
 
@@ -198,7 +202,7 @@ from Clientes;
 select distinct formas_pagamentos as Formas_de_Pagamentos
 from Pagamentos;
 
-
+*/
 
 
 
