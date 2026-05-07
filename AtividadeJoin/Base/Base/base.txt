@@ -1,0 +1,17 @@
+use base;
+
+#select nome, data_nascimento, day(data_nascimento) as 'Dia', month(data_nascimento) as 'Mês', year(data_nascimento) as 'Ano' from clientes;
+
+#select now(), curdate(), curtime();
+
+/*set @varDataInicio = '2025-04-10';
+set @varDataFim = '2025-05-10';
+select datediff(@varDataFim , @varDataInicio);*/
+
+/*set @varDataInicio = '2025-04-10';
+select date_add(@varDataInicio, interval 10 day)*/
+
+/*set @varDataFim = '2025-09-21';
+select date_sub(@vardataFim, interval 10 day);*/
+
+#select tabela_a.coluna1, tabela_a.coluna2, tabela_a.coluna3, tabela_b.coluna4 from tabela_a inner join tabela_b on tabela_a.id_chave_estrangeira = tabela_b.id_chave_primaria
